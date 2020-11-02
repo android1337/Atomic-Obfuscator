@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2A6419DA-A10F-4365-8AD2-7EBCE74778C3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AtomicObfuscator</RootNamespace>
+    <AssemblyName>AtomicObfuscator</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>AtomicObfuscator.ico</ApplicationIcon>
+    <StartupObject>Atomic.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DiscordRPC">
+      <HintPath>..\..\..\..\discord-rpc-csharp-master\DiscordRPC\bin\Debug\net35\DiscordRPC.dll</HintPath>
+    </Reference>
+    <Reference Include="dnlib">
+      <HintPath>D:\Desktop\KazoProtectorRebuiltConsatn\bin\Debug\dnlib.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroSuite 2.0">
+      <HintPath>..\..\..\..\MetroSuite 2.0.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AtomicProtector\Atomic\anti_dump_runtime.cs" />
+    <Compile Include="AtomicProtector\Atomic\cflow\API.cs" />
+    <Compile Include="AtomicProtector\Atomic\cflow\App.cs" />
+    <Compile Include="AtomicProtector\Atomic\cflow\ApplicationSettings.cs" />
+    <Compile Include="AtomicProtector\Atomic\cflow\Block.cs" />
+    <Compile Include="AtomicProtector\Atomic\cflow\Blocks.cs" />
+    <Compile Include="AtomicProtector\Atomic\cflow\cfhelper.cs" />
+    <Compile Include="AtomicProtector\Atomic\cflow\Constants.cs" />
+    <Compile Include="AtomicProtector\Atomic\cflow\control_flow.cs" />
+    <Compile Include="AtomicProtector\Atomic\cflow\Encryption.cs" />
+    <Compile Include="AtomicProtector\Atomic\cflow\InfoManager.cs" />
+    <Compile Include="AtomicProtector\Atomic\cflow\OnProgramStart.cs" />
+    <Compile Include="AtomicProtector\Atomic\cflow\Security.cs" />
+    <Compile Include="AtomicProtector\Atomic\cflow\User.cs" />
+    <Compile Include="AtomicProtector\Atomic\md5_checksum.cs" />
+    <Compile Include="AtomicProtector\Atomic\md5_runtime.cs" />
+    <Compile Include="Atomic\AtomicAntInvoke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Atomic\AtomicAntInvoke.Designer.cs">
+      <DependentUpon>AtomicAntInvoke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Atomic\Atomic\antidump.cs" />
+    <Compile Include="Atomic\Atomic\array.cs" />
+    <Compile Include="Atomic\Atomic\cflow.cs" />
+    <Compile Include="Atomic\Atomic\Ctrl_Flow.cs" />
+    <Compile Include="Atomic\Atomic\fields.cs" />
+    <Compile Include="Atomic\Atomic\mutatio.cs" />
+    <Compile Include="Atomic\Atomic\numbers.cs" />
+    <Compile Include="Atomic\Atomic\Renamer.cs" />
+    <Compile Include="Atomic\Atomic\runtime.cs" />
+    <Compile Include="Atomic\CoolForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Atomic\CoolForm.Designer.cs">
+      <DependentUpon>CoolForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Atomic\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Atomic\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Atomic\InjectHelper1.cs" />
+    <Compile Include="Atomic\packer\context.cs" />
+    <Compile Include="Atomic\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Atomic\AtomicAntInvoke.resx">
+      <DependentUpon>AtomicAntInvoke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Atomic\CoolForm.resx">
+      <DependentUpon>CoolForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Atomic\Form1.resources" />
+    <EmbeddedResource Include="Atomic\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
